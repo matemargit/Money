@@ -188,7 +188,7 @@
     <value>Can't convert value to DateOnly.</value>
   </data>
   <data name="ErrorCategoryAllreadyExists" xml:space="preserve">
-    <value>Can't create category {0} It allredy exists</value>
+    <value>Can't create category {0} It already exists</value>
   </data>
   <data name="ErrorCategoryDoesntExist" xml:space="preserve">
     <value>Category doesn't exist: {0}
@@ -198,16 +198,16 @@ Create it first with the category add command</value>
     <value>Category name can't be null or empty</value>
   </data>
   <data name="ErrorDateValidate" xml:space="preserve">
-    <value>end date must be bigger than start date</value>
+    <value>End date must be bigger than start date</value>
   </data>
   <data name="ErrorEmptyFileName" xml:space="preserve">
-    <value>file name can't be empty</value>
+    <value>File name can't be empty</value>
   </data>
   <data name="ErrorEmptyText" xml:space="preserve">
     <value>Text can't be empty</value>
   </data>
   <data name="ErrorFileMustExist" xml:space="preserve">
-    <value>file name can't be empy and must be an existing file</value>
+    <value>File name can't be empty and must be an existing file</value>
   </data>
   <data name="ErrorFolderDoesntExist" xml:space="preserve">
     <value>Error: specified git folder for sync doesn't exist.  Run the settings subcommand to check settings.</value>
@@ -249,7 +249,7 @@ Create it first with the category add command</value>
     <value>Date</value>
   </data>
   <data name="StatDayly" xml:space="preserve">
-    <value>Dayly breakdown</value>
+    <value>Daily breakdown</value>
   </data>
   <data name="StatFromToHeader" xml:space="preserve">
     <value>Spendings from {0} to {1}</value>

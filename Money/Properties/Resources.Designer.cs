@@ -279,7 +279,7 @@ namespace Money.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t create category {0} It allredy exists.
+        ///   Looks up a localized string similar to Can&apos;t create category {0} It already exists.
         /// </summary>
         internal static string ErrorCategoryAllreadyExists {
             get {
@@ -307,7 +307,7 @@ namespace Money.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to end date must be bigger than start date.
+        ///   Looks up a localized string similar to End date must be bigger than start date.
         /// </summary>
         internal static string ErrorDateValidate {
             get {
@@ -316,7 +316,7 @@ namespace Money.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to file name can&apos;t be empty.
+        ///   Looks up a localized string similar to File name can&apos;t be empty.
         /// </summary>
         internal static string ErrorEmptyFileName {
             get {
@@ -334,7 +334,7 @@ namespace Money.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to file name can&apos;t be empy and must be an existing file.
+        ///   Looks up a localized string similar to File name can&apos;t be empty and must be an existing file.
         /// </summary>
         internal static string ErrorFileMustExist {
             get {
@@ -419,7 +419,7 @@ namespace Money.Properties {
         ///[4;94mAdd[0m
         ///
         ///[48;2;155;155;155;38;2;30;30;30mDESCRIPTION:[500@[0m
-        ///[48;2;155;155;155;38;2;30;3 [rest of string was truncated]&quot;;.
+        ///[48;2;155;155; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ReadmeRender {
             get {
@@ -473,7 +473,7 @@ namespace Money.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dayly breakdown.
+        ///   Looks up a localized string similar to Daily breakdown.
         /// </summary>
         internal static string StatDayly {
             get {
