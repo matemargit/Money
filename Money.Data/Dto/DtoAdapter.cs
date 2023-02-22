@@ -13,7 +13,7 @@ public static class DtoAdapter
         {
             Date = DateOnly.Parse(parts[0], CultureInfo.InvariantCulture),
             Description = parts[1],
-            Ammount = double.Parse(parts[2], CultureInfo.InvariantCulture),
+            Amount = double.Parse(parts[2], CultureInfo.InvariantCulture),
             AddedOn = DateTime.Parse(parts[3], CultureInfo.InvariantCulture),
             CategoryName = parts[4]
         };
@@ -24,7 +24,7 @@ public static class DtoAdapter
         return new DataRowUi
         {
             Date = DateOnly.Parse(parts[0], CultureInfo.CurrentUICulture),
-            Ammount = double.Parse(parts[1], CultureInfo.CurrentUICulture),
+            Amount = double.Parse(parts[1], CultureInfo.CurrentUICulture),
             Description = parts[2],
             CategoryName = parts[3],
         };
@@ -33,7 +33,7 @@ public static class DtoAdapter
     public static string ToCsvLine(DataRowBackup backup)
     {
         CultureInfo c = CultureInfo.InvariantCulture;
-        return $"{backup.Date.ToString(c)};{backup.Description};{backup.Ammount.ToString(c)};{backup.AddedOn.ToString(c)};{backup.CategoryName}";
+        return $"{backup.Date.ToString(c)};{backup.Description};{backup.Amount.ToString(c)};{backup.AddedOn.ToString(c)};{backup.CategoryName}";
     }
 
     internal static DataRowExcel ToDataRowExcel(Spending spending)
@@ -42,7 +42,7 @@ public static class DtoAdapter
         {
             Date = spending.Date.ToDateTime(TimeOnly.MinValue),
             Description = spending.Description,
-            Ammount = spending.Ammount,
+            Amount = spending.Ammount,
             CategoryName = spending.Category.Description,
         };
     }
@@ -53,7 +53,7 @@ public static class DtoAdapter
         {
             Date = spending.Date,
             Description = spending.Description,
-            Ammount = spending.Ammount,
+            Amount = spending.Ammount,
             CategoryName = spending.Category.Description
         };
     }
@@ -65,7 +65,7 @@ public static class DtoAdapter
             Date = spending.Date,
             Description = spending.Description,
             AddedOn = spending.AddedOn,
-            Ammount = spending.Ammount,
+            Amount = spending.Ammount,
             CategoryName = spending.Category.Description,
         };
     }
@@ -77,7 +77,7 @@ public static class DtoAdapter
             Date = dataRowBackup.Date,
             Description = dataRowBackup.Description,
             AddedOn = dataRowBackup.AddedOn,
-            Ammount = dataRowBackup.Ammount,
+            Ammount = dataRowBackup.Amount,
             Category = category,
             Id = IdCreator.Invoke()
         };
@@ -91,7 +91,7 @@ public static class DtoAdapter
             Date = new DateOnly(dataRowExcel.Date.Year, dataRowExcel.Date.Month, dataRowExcel.Date.Day),
             Description = dataRowExcel.Description,
             AddedOn = DateTime.Now,
-            Ammount = dataRowExcel.Ammount,
+            Ammount = dataRowExcel.Amount,
             Category = category,
             Id = IdCreator.Invoke()
         };

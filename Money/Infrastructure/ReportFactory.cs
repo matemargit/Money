@@ -15,11 +15,11 @@ internal static class ReportFactory
         foreach (DataRowUi item in items)
         {
             ++count;
-            sum += item.Ammount;
-            if (item.Ammount < min)
-                min = item.Ammount;
-            if (item.Ammount > max)
-                max = item.Ammount;
+            sum += item.Amount;
+            if (item.Amount < min)
+                min = item.Amount;
+            if (item.Amount > max)
+                max = item.Amount;
         }
 
         double avg = sum / count;

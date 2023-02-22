@@ -2,19 +2,19 @@
 
 namespace Money.UserInterface;
 
-internal sealed class BachHandler<TResult>
+internal sealed class BatchHandler<TResult>
 {
     private readonly string _explanationText;
     private readonly Func<string[], TResult> _parserDelegate;
 
-    public BachHandler(string explanationText,
+    public BatchHandler(string explanationText,
                        Func<string[], TResult> parserDelegate)
     {
         _explanationText = explanationText;
         _parserDelegate = parserDelegate;
     }
 
-    public IReadOnlyList<TResult> DoBachInput()
+    public IReadOnlyList<TResult> DoBatchInput()
     {
         string fileName = CreateTempTxtFile();
         WriteExplanationText(fileName);

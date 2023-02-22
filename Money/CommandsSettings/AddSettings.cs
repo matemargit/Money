@@ -16,15 +16,15 @@ internal sealed class AddSettings : CommandSettings
 
     [Description("Amount of money spent")]
     [CommandArgument(0, "[amount]")]
-    public double Ammount { get; init; }
+    public double Amount { get; init; }
 
     [Description("Spending time. If not set current date will be used")]
     [CommandOption("-d|--date")]
     public DateOnly Date { get; init; }
 
-    [Description("Bach input. Allows to input multiple entries at once")]
-    [CommandOption("-b|--bach")]
-    public bool BachMode { get; set; }
+    [Description("Batch input. Allows to input multiple entries at once")]
+    [CommandOption("-b|--batch")]
+    public bool BatchMode { get; set; }
 
     public AddSettings()
     {
@@ -35,13 +35,13 @@ internal sealed class AddSettings : CommandSettings
 
     public override ValidationResult Validate()
     {
-        if (BachMode)
+        if (BatchMode)
             return ValidationResult.Success();
 
         ValidationResultBuilder errorbuilder = new();
 
         return errorbuilder
-            .AddIfTrue(() => Ammount <= 0, Resources.ErrorAddNegativeAmmount)
+            .AddIfTrue(() => Amount <= 0, Resources.ErrorAddNegativeAmmount)
             .AddIfNullOrWhiteSpace(Text, Resources.ErrorEmptyText)
             .AddIfNullOrWhiteSpace(Category, Resources.ErrorCategoryNameNull)
             .Build();

@@ -40,7 +40,7 @@ internal class GenTestDataCommand : AsyncCommand
             rows.Add(new DataRowExcel
             {
                 Date = RandomDate(DateTime.Now),
-                Ammount = Random.Shared.Next(1000, 100_000),
+                Amount = Random.Shared.Next(1000, 100_000),
                 CategoryName = _categories[Random.Shared.Next(0, _categories.Length)],
                 Description = $"Spending item {i}",
             });

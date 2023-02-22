@@ -15,19 +15,19 @@ internal sealed class AddCommand : AsyncCommand<AddSettings>
 
     public override Task<int> ExecuteAsync(CommandContext context, AddSettings settings)
     {
-        return settings.BachMode
-            ? BachMode(settings)
+        return settings.BatchMode
+            ? BatchMode(settings)
             : SingleMode(settings);
     }
 
-    private async Task<int> BachMode(AddSettings settings)
+    private async Task<int> BatchMode(AddSettings settings)
     {
-        BachHandler<DataRowUi> bachHandler = new(Resources.BachSpendingsText, DtoAdapter.DataRowUiFromParts);
-        IReadOnlyList<DataRowUi> bachInputs = bachHandler.DoBachInput();
+        BatchHandler<DataRowUi> batchHandler = new(Resources.BatchSpendingsText, DtoAdapter.DataRowUiFromParts);
+        IReadOnlyList<DataRowUi> batchInputs = batchHandler.DoBatchInput();
 
-        foreach (DataRowUi input in bachInputs)
+        foreach (DataRowUi input in batchInputs)
         {
-            (bool success, ulong id) = await _writeOnlyData.InsertAsync(input.Ammount,
+            (bool success, ulong id) = await _writeOnlyData.InsertAsync(input.Amount,
                                                                         input.Description,
                                                                         input.Date,
                                                                         input.CategoryName);
@@ -42,7 +42,7 @@ internal sealed class AddCommand : AsyncCommand<AddSettings>
 
     private async Task<int> SingleMode(AddSettings settings)
     {
-        (bool success, ulong id) = await _writeOnlyData.InsertAsync(settings.Ammount,
+        (bool success, ulong id) = await _writeOnlyData.InsertAsync(settings.Amount,
                                                                     settings.Text,
                                                                     settings.Date,
                                                                     settings.Category);

@@ -12,21 +12,21 @@ internal sealed class CategoryAddCommand : AsyncCommand<CategoryAddSettings>
     public override Task<int> ExecuteAsync(CommandContext context,
                                            CategoryAddSettings settings)
     {
-        return settings.BachMode
-            ? BachMode(settings)
+        return settings.BatchMode
+            ? BatchMode(settings)
             : SingleMode(settings);
     }
 
-    private async Task<int> BachMode(CategoryAddSettings settings)
+    private async Task<int> BatchMode(CategoryAddSettings settings)
     {
-        BachHandler<string> bachHandler = new(Resources.BachCategoryText, parts => parts[0]);
-        IReadOnlyList<string> bachInputs = bachHandler.DoBachInput();
-        foreach (string input in bachInputs)
+        BatchHandler<string> batchHandler = new(Resources.BatchCategoryText, parts => parts[0]);
+        IReadOnlyList<string> batchInputs = batchHandler.DoBatchInput();
+        foreach (string input in batchInputs)
         {
             (bool success, ulong id) = await _writeOnlyData.CreateCategoryAsync(input);
 
             if (!success)
-                Ui.Error(Resources.ErrorCategoryAllreadyExists, settings.CategoryName);
+                Ui.Error(Resources.ErrorCategoryAlreadyExists, settings.CategoryName);
             else
                 Ui.Success(id);
         }
@@ -39,7 +39,7 @@ internal sealed class CategoryAddCommand : AsyncCommand<CategoryAddSettings>
         (bool success, ulong id) = await _writeOnlyData.CreateCategoryAsync(settings.CategoryName);
 
         if (!success)
-            return Ui.Error(Resources.ErrorCategoryAllreadyExists, settings.CategoryName);
+            return Ui.Error(Resources.ErrorCategoryAlreadyExists, settings.CategoryName);
 
         Ui.Success(id);
 

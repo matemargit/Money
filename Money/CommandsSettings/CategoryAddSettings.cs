@@ -12,7 +12,7 @@ internal class CategoryAddSettings : CommandSettings
 
     [Description("Bach input. Allows to input multiple entries at once")]
     [CommandOption("-b|--bach")]
-    public bool BachMode { get; set; }
+    public bool BatchMode { get; set; }
 
     public CategoryAddSettings()
     {
@@ -21,7 +21,7 @@ internal class CategoryAddSettings : CommandSettings
 
     public override ValidationResult Validate()
     {
-        if (string.IsNullOrEmpty(CategoryName) && !BachMode)
+        if (string.IsNullOrEmpty(CategoryName) && !BatchMode)
             return ValidationResult.Error(Resources.ErrorCategoryNameNull);
 
         return ValidationResult.Success();

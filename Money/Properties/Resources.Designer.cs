@@ -67,9 +67,9 @@ namespace Money.Properties {
         ///# Note: blank lines and lines starting with # are ignored
         ///.
         /// </summary>
-        internal static string BachCategoryText {
+        internal static string BatchCategoryText {
             get {
-                return ResourceManager.GetString("BachCategoryText", resourceCulture);
+                return ResourceManager.GetString("BatchCategoryText", resourceCulture);
             }
         }
         
@@ -83,9 +83,9 @@ namespace Money.Properties {
         ///# Note: blank lines and lines starting with # are ignored
         ///.
         /// </summary>
-        internal static string BachSpendingsText {
+        internal static string BatchSpendingsText {
             get {
-                return ResourceManager.GetString("BachSpendingsText", resourceCulture);
+                return ResourceManager.GetString("BatchSpendingsText", resourceCulture);
             }
         }
         
@@ -281,9 +281,9 @@ namespace Money.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Can&apos;t create category {0} It already exists.
         /// </summary>
-        internal static string ErrorCategoryAllreadyExists {
+        internal static string ErrorCategoryAlreadyExists {
             get {
-                return ResourceManager.GetString("ErrorCategoryAllreadyExists", resourceCulture);
+                return ResourceManager.GetString("ErrorCategoryAlreadyExists", resourceCulture);
             }
         }
         

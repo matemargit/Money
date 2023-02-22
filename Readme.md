@@ -6,7 +6,7 @@ A simple console expense manager software written in C#. It uses EntityFramework
 
 The program is a console application and can be operated via commands, like git.
 
-Selected commands offer Bach mode. In this input mode, the given command will open your text editor where you can specify multiple entries at once for editing.
+Selected commands offer Batch mode. In this input mode, the given command will open your text editor where you can specify multiple entries at once for editing.
 
 ### Add
 
@@ -25,7 +25,7 @@ OPTIONS:
     -t, --text        A short text description of the spending            
     -c, --category    Spending category                                   
     -d, --date        Spending time. If not set current date will be used 
-    -b, --bach        Bach input. Allows to input multiple entries at once
+    -b, --batch       Batch input. Allows to input multiple entries at once
 ```
 
 ### Find
